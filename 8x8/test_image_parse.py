@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-for d, r, files in os.walk("icons\"):
+for d, r, files in os.walk("icons/"):
 	for filename in files:
 		print filename
 		im = Image.open(filename, 'r')
