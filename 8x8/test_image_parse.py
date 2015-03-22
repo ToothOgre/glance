@@ -4,9 +4,9 @@ from PIL import Image
 for d, r, files in os.walk("icons/"):
 	for filename in files:
 		print filename
-		im = Image.open(filename, 'r')
-		pixels = i.load() # this is not a list, nor is it list()'able
-		width, height = i.size
+		im = Image.open("icons/"+filename, 'r')
+		pixels = im.load() # this is not a list, nor is it list()'able
+		width, height = im.size
 		all_pixels = []
 		for x in range(width):
 			for y in range(height):
