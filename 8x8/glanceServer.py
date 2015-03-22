@@ -32,12 +32,13 @@ for d, r, files in os.walk("icons/"):
         #print all_pixels
         icons[filename]=all_pixels
 
-print icons
+#print icons
 for i in range(0,8):
     grid.append(EightByEight(address=0x70+i))
 
 def writeIconToMatrix(gridNumber, IconFileName):
     icon = icons[IconFileName]
+    print icon
     for x in range(0, 8):
         for y in range(0, 8):
             if icon[x+y] == 1:
@@ -65,8 +66,9 @@ class Matrix8X8(Resource):
 api.add_resource(Matrix8X8, '/8x8/<int:id>', endpoint = '8x8')
 
 
-writeIconToMatrix(0, 'icon_water1.bmp')
+
 if __name__ == '__main__':
+    writeIconToMatrix(0, 'icon_water1.bmp')
     app.run(host='0.0.0.0')
 
 
