@@ -30,3 +30,7 @@ api.add_resource(Matrix8X8, '/8x8/<int:id>', endpoint = '8x8')
 
 
 
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
