@@ -65,7 +65,7 @@ class Matrix8X8(Resource):
 api.add_resource(Matrix8X8, '/8x8/<int:id>', endpoint = '8x8')
 
 
-
+writeIconToMatrix(0, 'icon_water1.bmp')
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
 
