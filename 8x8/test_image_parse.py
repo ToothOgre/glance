@@ -7,9 +7,9 @@ for d, r, files in os.walk("icons/"):
 		im = Image.open("icons/"+filename, 'r')
 		pixels = im.load() # this is not a list, nor is it list()'able
 		width, height = im.size
-		all_pixels = []
+		all_pixels = [][]
 		for x in range(width):
 			for y in range(height):
 				cpixel = pixels[x, y]
-				all_pixels.append(cpixel)
+				all_pixels[x][y] = cpixel
 		print all_pixels
