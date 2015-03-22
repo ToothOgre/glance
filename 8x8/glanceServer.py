@@ -15,6 +15,7 @@ for i in range(0,8):
 
 class Matrix8X8(Resource):
   def get(self):
+    print "GET"
     pass
 
   def put(self, id):
@@ -24,6 +25,11 @@ class Matrix8X8(Resource):
         time.sleep(0.01)
 
   def delete(self, id):
+    print "DELETE"
+    pass
+
+  def post(self, id):
+    print "POST"
     pass
 
 api.add_resource(Matrix8X8, '/8x8/<int:id>', endpoint = '8x8')
