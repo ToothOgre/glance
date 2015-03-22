@@ -36,8 +36,15 @@ print icons
 for i in range(0,8):
     grid.append(EightByEight(address=0x70+i))
 
-def writeIconToMatrix(IconFileName):
-    
+def writeIconToMatrix(gridNumber, IconFileName):
+    icon = icons[IconFileName]
+    for x in range(0, 8):
+        for y in range(0, 8):
+            if icon[x+y] == 1:
+                grid[gridNumber].setPixel(x, y)
+                time.sleep(0.01)
+            
+            
 class Matrix8X8(Resource):
     def get(self):
         print "GET"
@@ -45,10 +52,7 @@ class Matrix8X8(Resource):
 
     def put(self, id):
         print"PUT"
-        for x in range(0, 8):
-            for y in range(0, 8):
-                grid[id].setPixel(x, y)
-                time.sleep(0.01)
+        
 
     def delete(self, id):
         print "DELETE"
