@@ -43,7 +43,7 @@ def writeIconToMatrix(gridNumber, IconFileName):
         for y in range(0, 8):
             #print (x*8)+y
             if icon[(x*8)+y] == 1:
-                grid[gridNumber].setPixel(x, y)
+                grid[gridNumber].setPixel(y, x)
                 time.sleep(0.01)
             
             
