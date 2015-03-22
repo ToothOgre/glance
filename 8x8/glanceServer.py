@@ -24,6 +24,10 @@ for d, r, files in os.walk("icons/"):
         for x in range(width):      
             for y in range(height):
                 cpixel = pixels[x, y]
+                if cpixel[0]>127 and cpixel[1]>127 and cpixel[2]>127:
+                    cpixel=1
+                else:
+                    cpixel=0
                 all_pixels.append(cpixel)
         #print all_pixels
         icons[filename]=all_pixels
@@ -32,6 +36,8 @@ print icons
 for i in range(0,8):
     grid.append(EightByEight(address=0x70+i))
 
+def writeIconToMatrix(IconFileName):
+    
 class Matrix8X8(Resource):
     def get(self):
         print "GET"
