@@ -3,7 +3,7 @@
 import time
 import datetime
 from Adafruit_8x8 import EightByEight
-from flask import Flask
+from flask import Flask, request
 from flask.ext.restful import Api, Resource
 import os
 from PIL import Image
@@ -52,8 +52,9 @@ class Matrix8X8(Resource):
         print "GET"
         pass
 
-    def put(self, id, iconFile):
+    def put(self, id):
         print"PUT"
+        print request.form
         writeIconToMatrix(id, request.form['iconFile'])
 
     def delete(self, id):
@@ -64,7 +65,7 @@ class Matrix8X8(Resource):
         print "POST"
         pass
 
-api.add_resource(Matrix8X8, '/8x8/<int:id>', endpoint = '8x8')
+api.add_resource(Matrix8X8, '/8x8/<int:id>')
 
 
 
