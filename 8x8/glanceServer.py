@@ -44,7 +44,7 @@ def writeIconToMatrix(gridNumber, IconFileName):
             #print (x*8)+y
             if icon[(x*8)+y] == 1:
                 grid[gridNumber].setPixel(y, x)
-                time.sleep(0.01)
+                #time.sleep(0.01)
             
             
 class Matrix8X8(Resource):
