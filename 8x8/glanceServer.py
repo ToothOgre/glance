@@ -52,7 +52,7 @@ class Matrix8X8(Resource):
         print "GET"
         pass
 
-    def put(self, id):
+    def put(self):
         print"PUT"
         print request.form
         writeIconToMatrix(request.form['gridNumber'], request.form['iconFile'])

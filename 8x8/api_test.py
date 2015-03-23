@@ -1,7 +1,7 @@
 import requests, json
 
 
-url = 'http://192.168.1.208:5000/8x8/'
+url = 'http://192.168.1.208:5000/8x8/icon'
 
 data = {'iconFile' : 'icon_bang.bmp', 'gridNumber' : 1}
 print data
