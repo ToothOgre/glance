@@ -52,9 +52,9 @@ class Matrix8X8(Resource):
         print "GET"
         pass
 
-    def put(self, id):
+    def put(self, id, iconFile):
         print"PUT"
-        
+        writeIconToMatrix(id, iconFile)
 
     def delete(self, id):
         print "DELETE"
@@ -64,12 +64,12 @@ class Matrix8X8(Resource):
         print "POST"
         pass
 
-api.add_resource(Matrix8X8, '/8x8/<int:id>', endpoint = '8x8')
+api.add_resource(Matrix8X8, '/8x8/<int:id>/<string:iconFile>', endpoint = '8x8')
 
 
 
 if __name__ == '__main__':
-    writeIconToMatrix(0, 'icon_water1.bmp')
+    #writeIconToMatrix(0, 'icon_water1.bmp')
     app.run(host='0.0.0.0')
 
 
