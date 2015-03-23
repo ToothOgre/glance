@@ -54,7 +54,7 @@ class Matrix8X8(Resource):
 
     def put(self, id, iconFile):
         print"PUT"
-        writeIconToMatrix(id, iconFile)
+        writeIconToMatrix(id, request.form['iconFile'])
 
     def delete(self, id):
         print "DELETE"
@@ -64,7 +64,7 @@ class Matrix8X8(Resource):
         print "POST"
         pass
 
-api.add_resource(Matrix8X8, '/8x8/<int:id>/<string:iconFile>', endpoint = '8x8')
+api.add_resource(Matrix8X8, '/8x8/<int:id>', endpoint = '8x8')
 
 
 
